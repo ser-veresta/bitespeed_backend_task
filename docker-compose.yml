@@ -1,0 +1,40 @@
+services:
+  reverseproxy:
+    image: nginx
+    ports:
+      - "443:443"
+      - "80:80"
+    # restart: always
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl/site.crt:/etc/ssl/certs/site.crt
+      - ./ssl/site.dec.key:/etc/ssl/private/site.dec.key
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=bitespeed
+      - POSTGRES_PASSWORD=bitespeed
+      - POSTGRES_DB=bitespeed
+    ports:
+      - "5432:5432"
+    restart: always
+
+  api:
+    depends_on:
+      - reverseproxy
+      - db
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - NODE_ENV=development
+      - PORT=8080
+      - POSTGRES_HOST=localhost
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=bitespeed
+      - POSTGRES_PASSWORD=bitespeed
+      - POSTGRES_DB=bitespeed
+    ports:
+      - "8080:8080"
+    restart: always
