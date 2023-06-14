@@ -4,6 +4,7 @@
 - [Assumption](#assumption)
 - [Technologies](#technologies)
 - [Setup](#setup)
+- [Resume](./Gopal_Resume_.pdf)
 
 ## General info
 
