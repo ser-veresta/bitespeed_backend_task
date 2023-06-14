@@ -12,7 +12,7 @@ RUN ls -a
 
 RUN npm install
 
-RUN npm build
+RUN npm run build
 
 ## this is stage two , where the app actually runs
 

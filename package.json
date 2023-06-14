@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev -r dotenv/config src/index.ts",
     "build": "tsc",
-    "start": "NODE_ENV=production node dist",
+    "start": "NODE_ENV=production node dist"
   },
   "author": "",
   "license": "ISC",
