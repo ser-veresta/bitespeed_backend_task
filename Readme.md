@@ -10,7 +10,7 @@
 
 Refer [here](https://bitespeed.notion.site/Bitespeed-Backend-Task-Identity-Reconciliation-53392ab01fe149fab989422300423199) for requirement.
 
-Deployed Project /identity Endpoint link: https://bitespeed.ser-veresta.dev/api/identity
+Deployed Project **/identity** Endpoint link: https://bitespeed.ser-veresta.dev/api/identity
 
 ###Assumption
 Assuming we should not create a new user when the request email and phone number has a exactly matching data in DB
